@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110206033637) do
+ActiveRecord::Schema.define(:version => 20110206175817) do
 
   create_table "images", :force => true do |t|
     t.decimal  "Latitude"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110206033637) do
     t.string   "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
   end
 
 end
