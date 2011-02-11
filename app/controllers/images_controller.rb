@@ -9,6 +9,32 @@ class ImagesController < ApplicationController
       format.xml  { render :xml => @images }
     end
   end
+  
+  def gallery
+	@images = Image.all
+	@lat = params[:lat].to_f
+	@long = params[:long].to_f
+	@images.each do |image|
+	@nearby = []
+	@images.each do |image|
+	if (image.Latitude - @lat)**2 + (image.Longitude - @long)**2 < 1
+	 @nearby << image
+	end
+	@nearby = @nearby.sort_by { rand }
+	end
+
+#<% if nearby.length >= 1 %>
+#<p><%= image_tag nearby[0].photo.url %></p>
+end
+#<% end %>
+	
+	
+	
+	respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @images }
+    end
+  end
 
   # GET /images/1
   # GET /images/1.xml

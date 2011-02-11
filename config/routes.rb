@@ -1,5 +1,9 @@
 Visionopolis5::Application.routes.draw do
+  match 'images/gallery' => "images#gallery", :as => :gallery
   resources :images
+  
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
