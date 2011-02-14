@@ -5,7 +5,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'nifty-generators'
 gem 'paperclip'
-gem 'aws-s3'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails'
